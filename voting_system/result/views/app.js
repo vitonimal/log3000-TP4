@@ -1,4 +1,4 @@
-var app = angular.module('yesvsno', []);
+var app = angular.module('demvsgop', []);
 var socket = io.connect({transports:['polling']});
 
 var bg1 = document.getElementById('background-stats-1');
