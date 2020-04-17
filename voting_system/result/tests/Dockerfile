@@ -1,4 +1,4 @@
-FROM node:8.9-slim
+FROM node:latest
 
 RUN apt-get update -qq && apt-get install -qy \ 
     ca-certificates \
@@ -6,7 +6,9 @@ RUN apt-get update -qq && apt-get install -qy \
     curl \
     libfontconfig \
     --no-install-recommends
-RUN yarn global add phantomjs-prebuilt
+
+ENV PUPPETEER_SKIP_DOWNLOAD=false
+RUN npm i -g puppeteer
 ADD . /app
 WORKDIR /app
 CMD ["/app/tests.sh"]
