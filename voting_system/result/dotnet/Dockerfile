@@ -1,7 +1,7 @@
 FROM microsoft/dotnet:2.1-sdk-nanoserver-sac2016 as builder
 
 WORKDIR /Result
-COPY Result/Result.csproj .
+# COPY Result/Result.csproj .
 RUN dotnet restore
 
 COPY /Result .
